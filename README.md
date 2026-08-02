@@ -2,7 +2,7 @@
 
 > An AutoCAD plugin (WPF) to batch modify attributes of block references.
 
-针对 **AutoCAD 2025 / 2026** 的 in-process 插件（**.NET 8 + WPF**，MVVM 架构）。
+针对版本大于 **AutoCAD 2025** 的 in-process 插件（**.NET 8 + WPF**，MVVM 架构）。
 在图纸中框选多个**带属性的块参照**，即可在 WPF 窗口中批量查看、修改属性值并一键写回。
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
@@ -37,7 +37,7 @@ Batch Attribute Modification/
 ├── BatchAttributeModification.csproj   # net8.0-windows / Library / UseWPF
 ├── Batch Attribute Modification.slnx   # 解决方案文件
 ├── ApplicationPlugin.cs                # 插件入口 + BATMOD 命令
-├── lib/                                # AutoCAD API DLL（AcMgd/AcDbMgd/AcCoreMgd 等）
+├── lib/                                # AutoCAD API DLL（git 忽略，需自行复制）
 ├── Models/
 │   └── AttributeItem.cs                # 属性行模型（块名/标记/原值/新值）
 ├── ViewModels/
@@ -68,6 +68,10 @@ C:\Program Files\Autodesk\AutoCAD 2025\AcCoreMgd.dll
 ```
 
 > 项目已通过 `HintPath` 引用它们，且 `Copy Local = false`（不会复制到输出目录）。
+>
+> ⚠️ **`lib\` 下的 Autodesk 专有 DLL 已被 `.gitignore` 忽略、不会提交到仓库**。
+> 每次克隆后都需按上述步骤自行复制；请勿将这些二进制随源码分发
+> （详见 [NOTICE](NOTICE)）。
 
 ### 2. 编译
 

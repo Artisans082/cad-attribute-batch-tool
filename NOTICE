@@ -1,0 +1,28 @@
+Batch Attribute Modification - AutoCAD Plugin
+=============================================
+
+This project is licensed under the GNU Affero General Public License v3.0
+(AGPL-3.0). See the LICENSE file for details.
+
+Third-party / Proprietary Components
+------------------------------------
+This software uses the Autodesk AutoCAD .NET API. The binary components in the
+`lib\` directory (e.g. AcMgd.dll, AcDbMgd.dll, AcCoreMgd.dll, and others) are the
+proprietary property of Autodesk, Inc. and are NOT covered by this project's
+AGPL-3.0 license.
+
+These files are NOT distributed with this source repository. You must copy them
+from your local AutoCAD installation (e.g.
+`C:\Program Files\Autodesk\AutoCAD 2025\`) and they are solely governed by
+Autodesk's own license terms / EULA.
+
+AutoCAD and related trademarks are the property of Autodesk, Inc. This project
+is not affiliated with or endorsed by Autodesk.
+
+---------------------------------------------------------------------------
+
+本项目基于 GNU AGPL-3.0 开源，详见 LICENSE 文件。
+本项目使用 Autodesk AutoCAD .NET API。`lib\` 目录下的 Autodesk 专有二进制组件
+（AcMgd.dll、AcDbMgd.dll、AcCoreMgd.dll 等）版权归 Autodesk, Inc. 所有，
+不受本项目 AGPL-3.0 许可约束，也不随本仓库分发。
+使用时请从本地 AutoCAD 安装目录自行复制，并遵守 Autodesk 的许可条款。
