@@ -2,7 +2,7 @@
 
 > An AutoCAD plugin (WPF) to batch modify attributes of block references.
 
-针对版本大于 **AutoCAD 2025** 的 in-process 插件（**.NET 8 + WPF**，MVVM 架构）。
+针对版本大于等于 **AutoCAD 2025** 的 in-process 插件。
 在图纸中框选多个**带属性的块参照**，即可在 WPF 窗口中批量查看、修改属性值并一键写回。
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
