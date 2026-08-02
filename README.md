@@ -37,7 +37,7 @@ Batch Attribute Modification/
 ├── BatchAttributeModification.csproj   # net8.0-windows / Library / UseWPF
 ├── Batch Attribute Modification.slnx   # 解决方案文件
 ├── ApplicationPlugin.cs                # 插件入口 + BATMOD 命令
-├── lib/                                # AutoCAD API DLL（AcMgd/AcDbMgd/AcCoreMgd 等）
+├── lib/                                # AutoCAD API DLL（git 忽略，需自行复制）
 ├── Models/
 │   └── AttributeItem.cs                # 属性行模型（块名/标记/原值/新值）
 ├── ViewModels/
@@ -68,6 +68,10 @@ C:\Program Files\Autodesk\AutoCAD 2025\AcCoreMgd.dll
 ```
 
 > 项目已通过 `HintPath` 引用它们，且 `Copy Local = false`（不会复制到输出目录）。
+>
+> ⚠️ **`lib\` 下的 Autodesk 专有 DLL 已被 `.gitignore` 忽略、不会提交到仓库**。
+> 每次克隆后都需按上述步骤自行复制；请勿将这些二进制随源码分发
+> （详见 [NOTICE](NOTICE)）。
 
 ### 2. 编译
 

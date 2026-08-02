@@ -43,3 +43,8 @@
 # 发布产物
 publish/
 artifacts/
+
+# ---------- AutoCAD 专有依赖 ----------
+# Autodesk 专有 DLL 不随源码分发：请自行从本地 AutoCAD 安装目录复制到 lib\
+# 保留 lib\README.txt 说明文件，仅忽略其中的 .dll 二进制
+lib/*.dll
