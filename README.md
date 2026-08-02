@@ -31,8 +31,9 @@
 ## 📁 项目结构
 
 ```
-BatchAttributeModification.Plugin/
+Batch Attribute Modification/
 ├── BatchAttributeModification.csproj   # net8.0-windows / Library / UseWPF
+├── Batch Attribute Modification.slnx   # 解决方案文件
 ├── ApplicationPlugin.cs                # 插件入口 + BATMOD 命令
 ├── lib/                                # AutoCAD API DLL（AcMgd/AcDbMgd/AcCoreMgd 等）
 ├── Models/
@@ -48,7 +49,8 @@ BatchAttributeModification.Plugin/
 │   ├── BlockSelector.cs                # 框选带属性的块（DXF 过滤）
 │   ├── AttributeReader.cs              # 只读事务读取属性
 │   └── AttributeWriter.cs              # 加锁 + 写事务批量写回
-└── Resources/Styles/Styles.xaml        # 界面样式
+├── Resources/Styles/Styles.xaml        # 界面样式
+└── README.md
 ```
 
 ## 🚀 快速开始
