@@ -1,0 +1,69 @@
+<!--
+    批量修改块属性窗口（View）。
+    仅定义布局与数据绑定，业务逻辑全部位于 MainViewModel（MVVM 分层）。
+-->
+<Window x:Class="BatchAttributeModification.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="批量修改块属性"
+        Height="450" Width="720"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        ResizeMode="CanResizeWithGrip">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- 合并公共样式资源字典（Styles.xaml），统一表格与列头外观 -->
+                <ResourceDictionary Source="pack://application:,,,/BatchAttributeModification;component/Resources/Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <DockPanel>
+        <!-- 底部按钮栏：DockPanel.Dock=Bottom 使其固定在窗口底部 -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,8,12,10">
+            <!-- 属性总数提示，绑定 Items.Count 实时显示数量 -->
+            <TextBlock Text="{Binding Items.Count, StringFormat=共 {0} 个属性}"
+                       VerticalAlignment="Center" Margin="0,0,16,0"
+                       Foreground="#666666"/>
+            <!-- "确定"按钮：确认修改并关闭窗口（命令绑定到 ApplyCommand） -->
+            <Button Content="确定" Width="84" Height="28" Margin="0,0,8,0"
+                    Command="{Binding ApplyCommand}"/>
+            <!-- "取消"按钮：放弃修改并关闭窗口（命令绑定到 CloseCommand） -->
+            <Button Content="取消" Width="84" Height="28"
+                    Command="{Binding CloseCommand}"/>
+        </StackPanel>
+
+        <!--
+            属性列表（DataGrid）：
+            块名/标记/原值 为只读用于查看，"新值"列可编辑，输入即同步到 Items。
+        -->
+        <DataGrid ItemsSource="{Binding Items}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="False"
+                  Margin="12,12,12,4"
+                  RowHeaderWidth="0"
+                  SelectionMode="Extended"
+                  HeadersVisibility="Column">
+            <DataGrid.Columns>
+                <!-- 块名列：只读 -->
+                <DataGridTextColumn Header="块名" Binding="{Binding BlockName}"
+                                    IsReadOnly="True" Width="150"/>
+                <!-- 属性标记列：只读 -->
+                <DataGridTextColumn Header="标记" Binding="{Binding Tag}"
+                                    IsReadOnly="True" Width="100"/>
+                <!-- 原值列：只读 -->
+                <DataGridTextColumn Header="原值" Binding="{Binding OldValue}"
+                                    IsReadOnly="True" Width="190"/>
+                <!-- 新值列：可编辑；UpdateSourceTrigger=PropertyChanged 实现输入即同步 -->
+                <DataGridTextColumn Header="新值" Binding="{Binding NewValue, UpdateSourceTrigger=PropertyChanged}"
+                                    Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>

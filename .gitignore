@@ -1,0 +1,45 @@
+# ============================================
+# .NET (C#) / Visual Studio 项目忽略规则
+# 主要目的：忽略 Debug 构建输出与 Test 测试文件夹
+# ============================================
+
+# ---------- IDE / 用户设置 ----------
+# Visual Studio 用户本地设置（.vs 目录）
+.vs/
+# 用户级配置文件
+*.user
+*.suo
+
+# ---------- 构建输出目录（含 Debug / Release） ----------
+# 标准的 .NET 编译输出目录
+[Bb]in/
+[Oo]bj/
+
+# 明确忽略 Debug 配置的构建输出目录
+**/[Bb]in/[Dd]ebug/
+**/[Oo]bj/[Dd]ebug/
+
+# 同时忽略 Release 配置的输出目录
+**/[Bb]in/[Rr]elease/
+**/[Oo]bj/[Rr]elease/
+
+# ---------- Test / 测试相关 ----------
+# 测试数据、测试用例文件夹（如 test\ 下的 *.dwg 测试图纸）
+**/[Tt]est/
+**/[Tt]ests/
+**/[Tt]esting/
+
+# 单元测试 / 集成测试结果输出目录
+**/TestResults/
+**/coverage/
+*.trx
+*.coverage
+
+# ---------- 其他 .NET 构建产物 ----------
+# NuGet 临时/回退目录
+*.nupkg
+*.snupkg
+
+# 发布产物
+publish/
+artifacts/

@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <!-- AutoCAD 2025 / 2026 基于 .NET 8；AutoCAD 2024 及以下需改为 net48 -->
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>BatchAttributeModification</RootNamespace>
+    <AssemblyName>BatchAttributeModification</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 请手动将以下 DLL 从 AutoCAD 安装目录复制到本项目的 lib\ 文件夹：
+         (例如 C:\Program Files\Autodesk\AutoCAD 2025\AcMgd.dll 等) -->
+    <Reference Include="AcMgd">
+      <HintPath>lib\AcMgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AcDbMgd">
+      <HintPath>lib\AcDbMgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AcCoreMgd">
+      <HintPath>lib\AcCoreMgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,33 @@
+<!-- 公共资源字典：集中定义界面样式，供各 View 通过合并字典引用 -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- 数据表格（DataGrid）通用样式：网格线、斑马纹、边框 -->
+    <Style TargetType="DataGrid">
+        <!-- 显示所有网格线，便于逐行查看数据 -->
+        <Setter Property="GridLinesVisibility" Value="All"/>
+        <!-- 水平网格线颜色（浅灰） -->
+        <Setter Property="HorizontalGridLinesBrush" Value="#E0E0E0"/>
+        <!-- 垂直网格线颜色（浅灰） -->
+        <Setter Property="VerticalGridLinesBrush" Value="#E0E0E0"/>
+        <!-- 偶数行背景（斑马纹效果） -->
+        <Setter Property="AlternatingRowBackground" Value="#FAFAFA"/>
+        <!-- 奇数行背景（白色） -->
+        <Setter Property="RowBackground" Value="White"/>
+        <!-- 表格外边框颜色 -->
+        <Setter Property="BorderBrush" Value="#CCCCCC"/>
+        <!-- 表格外边框宽度 -->
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <!-- 列头（DataGridColumnHeader）样式：浅灰背景 + 加粗文字 -->
+    <Style TargetType="DataGridColumnHeader">
+        <!-- 列头背景色 -->
+        <Setter Property="Background" Value="#F0F0F0"/>
+        <!-- 列头文字加粗，更醒目 -->
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <!-- 列头内边距，避免文字拥挤 -->
+        <Setter Property="Padding" Value="6,4"/>
+    </Style>
+
+</ResourceDictionary>
