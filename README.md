@@ -5,6 +5,8 @@
 针对 **AutoCAD 2025 / 2026** 的 in-process 插件（**.NET 8 + WPF**，MVVM 架构）。
 在图纸中框选多个**带属性的块参照**，即可在 WPF 窗口中批量查看、修改属性值并一键写回。
 
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+
 ## ✨ 功能特性
 
 - 🎯 **框选即取**：按 `BATMOD` 命令后框选任意多个带属性的块，自动过滤掉无关实体
@@ -136,7 +138,12 @@ flowchart LR
 - [ ] 可选 `PaletteSet` 停靠面板模式
 - [ ] 撤销 / 预览功能
 
-## 📄 许可证
+## 基于 **GNU Affero General Public License v3.0（AGPL-3.0）** 开源发布，
+详见根目录的 [LICENSE](LICENSE) 文件。
+
+> 免责声明：本项目与 Autodesk 公司无任何关联或背书；AutoCAD 及相关商标、
+> 其 API（`AcMgd.dll` 等）的版权均归 Autodesk 所有。本许可证仅适用于本项目的
+> 原创代码，不涉及 Autodesk 的专有组件
 
 本项目仅供学习交流使用。AutoCAD 相关 API 版权归 Autodesk 所有。
 
